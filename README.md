@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to AI.Gram👋</h1>
 
-> Full Stack social media-like web app which generates images via a user prompt using the Dall-E AI from OpenAI
+> Full stack social media-like web app which generates images via a user prompt using the Dall-E AI from OpenAI
 
 ### ✨ [Demo](https://aigram.vercel.app/)
 
@@ -44,8 +44,13 @@ npm install
    Done!
 
 ## Usage
-```sh
-npm run start
+To run the server, cd into the server directory and run the following line
+```
+npm start
+```
+To run the client, cd into the client directory and run the following line
+```
+npm run dev
 ```
 
 The API can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://ai-gram-api.onrender.com/) </br>
