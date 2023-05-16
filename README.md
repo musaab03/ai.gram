@@ -14,8 +14,7 @@
 git clone https://github.com/musaab03/ai.gram
 ```
 3. Then cd into the server directory
-4. Create an .env files 
-5. In .env add the following lines </br>
+4. Create an .env file and add in the following lines </br>
 ```
 OPENAI_API_KEY=""
 MONGO_URI=""
@@ -24,23 +23,22 @@ CLOUDINARY_CLOUD_NAME=""
 CLOUDINARY_API_KEY=""
 CLOUDINARY_API_SECRET=""
 ```
-6. Now head over to [OpenAI](https://platform.openai.com/account/api-keys), create an account and generate an API key
-7. Place this API key into the corresponding variable in .env
-8. Go to [MongoDB](https://cloud.mongodb.com/), create an account
-9. Create a cluster and edit the region closest to you
-10. Go to database access and create a new user, then go to network access and add the IP <b>0.0.0.0/0</b>
-11. Now, go to deployment and press connect, drivers
-12. Copy and paste the URI into the corresponding .env variable, it should looks something like this </br>
+5. Now head over to [OpenAI](https://platform.openai.com/account/api-keys), create an account and generate an API key
+6. Place this API key into the corresponding variable in .env
+7. Go to [MongoDB](https://cloud.mongodb.com/), create an account
+8. Create a cluster and edit the region closest to you
+9. Go to database access and create a new user, then go to network access and add the IP <b>0.0.0.0/0</b>
+10. Now, go to deployment and press connect, drivers
+11. Copy and paste the URI into the corresponding .env variable, it should looks something like this </br>
 ```
 mongodb+srv://<USERNAME>:<PASSWORD>@<DATABASE_NAME>.aemrjwv.mongodb.net/?retryWrites=true&w=majority
 ```
-13. Lastly, head over to [Cloudinary](https://console.cloudinary.com/), and create an account
-14. Copy the Cloud Name, API Key, and API Secret found in your Dashboard, and paste them into the corresponding .env file variables
-15. Before use, excecute the following line to import all the needed modules </br>
+12. Lastly, head over to [Cloudinary](https://console.cloudinary.com/), and create an account
+13. Copy the Cloud Name, API Key, and API Secret found in your Dashboard, and paste them into the corresponding .env file variables
+14. Before use, excecute the following line in both the server and client directories to import all the needed modules </br>
 ```
 npm install
 ```
-
    Done!
 
 ## Usage
