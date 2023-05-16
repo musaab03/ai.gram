@@ -51,7 +51,7 @@ To run the client, cd into the client directory and run the following line
 npm run dev
 ```
 
-The API can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://ai-gram-api.onrender.com/) </br>
+The API itself can be accessed through using a REST client such as [Insomnia](https://insomnia.rest/download) or through the [hosted link](https://ai-gram-api.onrender.com/) </br>
 Currently the API has 3 routes to access:
 - GET /api/v1/post
 - GET /api/v1/post
