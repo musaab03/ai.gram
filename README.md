@@ -2,7 +2,7 @@
 
 > Full stack social media-like web app which generates images via a user prompt using the Dall-E AI from OpenAI
 
-### ✨ [Demo](https://aigram.vercel.app/)
+### ✨ [Visit Live Site](https://aigram.vercel.app/)
 
 ![image](https://github.com/musaab03/ai.gram/assets/103457332/ef96488d-7ef9-4c43-9991-4b99d442e2be)
 
@@ -67,6 +67,7 @@ Currently the API has 3 routes to access:
 - Tailwind CSS
 - Vercel
 - Cloudinary
+- Render
 
 ## Author
 
