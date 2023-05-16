@@ -4,7 +4,7 @@
 
 ### ✨ [Demo](https://aigram.vercel.app/)
 
-![image](https://user-images.githubusercontent.com/103457332/236343940-9e4b8bf8-7522-48bc-a3b0-9798663f3aee.png)
+![image](https://github.com/musaab03/ai.gram/assets/103457332/ef96488d-7ef9-4c43-9991-4b99d442e2be)
 
 ## Install
 
