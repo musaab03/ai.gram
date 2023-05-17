@@ -160,7 +160,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ darkMode }) => {
             </button>
           </div>
 
-          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl drop-shadow-lg focus:ring-blue-500 focus:border-blue-500 w-96 p-3 h-96 flex justify-center mx-auto mt-6">
+          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl drop-shadow-lg focus:ring-blue-500 focus:border-blue-500 w-[15rem] p-3 h-[15rem] sm:w-[18rem] sm:h-[18rem] md:w-96 md:h-96 flex justify-center mx-auto mt-6">
             {form.photo ? (
               <img
                 src={form.photo}
