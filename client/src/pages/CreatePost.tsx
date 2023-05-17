@@ -20,7 +20,11 @@ export type FormPostType = {
   photo: string;
 };
 
-const CreatePost: React.FC = () => {
+type CreatePostProps = {
+  darkMode: boolean;
+};
+
+const CreatePost: React.FC<CreatePostProps> = ({ darkMode }) => {
   const navigate: NavigateFunction = useNavigate();
   const [form, setForm] = useState<FormPostType>({
     name: "",
@@ -37,11 +41,14 @@ const CreatePost: React.FC = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch("http://localhost:8080/api/v1/dalle", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt: form.prompt }),
-        });
+        const response = await fetch(
+          "https://ai-gram-api.onrender.com/api/v1/dalle",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ prompt: form.prompt }),
+          }
+        );
 
         const data = await response.json();
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
@@ -68,11 +75,14 @@ const CreatePost: React.FC = () => {
       setLoading(true);
 
       try {
-        const response = await fetch("http://localhost:8080/api/v1/post", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
-        });
+        const response = await fetch(
+          "https://ai-gram-api.onrender.com/api/v1/post",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(form),
+          }
+        );
 
         await response.json();
         navigate("/");
@@ -99,8 +109,18 @@ const CreatePost: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto text-center">
       <div>
-        <h1 className="font-extrabold text-[#222328] text-3xl">Create</h1>
-        <p className="mt-4 text-[#666e75] text-[16px] max-w-54">
+        <h1
+          className={`font-extrabold ${
+            darkMode ? `text-white` : `text-[#222328]`
+          } text-3xl`}
+        >
+          Create
+        </h1>
+        <p
+          className={`mt-4 ${
+            darkMode ? `text-gray-300` : `text-[#666e75]`
+          }  text-[16px] max-w-54`}
+        >
           Create imaginative and visually appealing images through the DALL-E AI
           and share them with everyone else
         </p>
@@ -115,6 +135,7 @@ const CreatePost: React.FC = () => {
             placeholder="John Doe"
             value={form.name}
             handleChange={handleChange}
+            darkMode={darkMode}
           />
           <FormField
             labelName="Prompt"
@@ -125,13 +146,14 @@ const CreatePost: React.FC = () => {
             handleChange={handleChange}
             isSupriseMe
             handleSupriseMe={handleSupriseMe}
+            darkMode={darkMode}
           />
 
           <div className="mt-5">
             <button
               type="button"
               onClick={generateImage}
-              className="text-white bg-green-700 font-medium rounded-md text-md w-full sm:w-1/2 px-5 py-3 text-center"
+              className="text-white bg-[#0dd9a3] font-medium rounded-md text-md w-full sm:w-1/2 px-5 py-3 text-center shadow-lg shadow-black/30"
               disabled={disabled}
             >
               {generatingImg ? "Generating..." : "Generate"}
@@ -163,7 +185,7 @@ const CreatePost: React.FC = () => {
           <div className="mt-10">
             <button
               type="submit"
-              className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-auto sm:w-1/2 px-5 py-3 text-center"
+              className="mt-3 text-white bg-gray-700 font-medium rounded-md text-sm w-auto sm:w-1/2 px-5 py-3 text-center shadow-lg shadow-black/50"
               disabled={disabled}
             >
               {isLoading ? "Posting..." : "Post to the community"}
